@@ -1,3 +1,16 @@
-<h1>
-  {{title}}
-</h1>
+<md-sidenav-container>
+  <md-sidenav #sidenav mode="side">
+    <app-sidebar></app-sidebar>
+  </md-sidenav>
+  <div class="site">
+    <header>
+      <app-header (toggle)="sidenav.toggle()"></app-header>
+    </header>
+    <main>
+      <button (click)="sidenav.toggle()">打开侧边栏</button>
+    </main>
+    <footer>
+      <app-footer></app-footer>
+    </footer>
+  </div>
+</md-sidenav-container>

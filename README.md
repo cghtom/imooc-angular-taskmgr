@@ -1,3 +1,43 @@
+### 环境
+
+nodejs
+
+cnpm
+
+cnpm install -g @angular/cli
+
+cnpm install -g json-server
+
+### 新建工程结构
+
+ng new taskmgr -si --style=scss
+
+cnpm install
+
+### 创建核心模块
+
+ng g m core
+
+### 创建共享模块
+
+ng g m shared
+
+### 安装material组件库
+
+cnpm i --save @angular/material@2.0.0-beta.7
+
+### 解决出错：ng4的animations
+
+cnpm i @angular/animations --save
+
+
+### 如果安装@angular/cli失败
+1、移除npm uninstall -g @angular/cli
+
+2、清除缓存npm cache clean
+
+3、重新安装cnpm install -g @angular/cli
+
 # Taskmgr
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.6.
