@@ -1,13 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { MdSidenavModule } from '@angular/material';
-
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { LoginModule } from './login/login.module';
+import { ProjectModule } from './project/project.module';
+import { TaskModule } from './task/task.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -15,12 +13,11 @@ import { LoginModule } from './login/login.module';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
+    SharedModule,
     CoreModule,
-    MdSidenavModule,
-    AppRoutingModule,
-    LoginModule
+    LoginModule,
+    ProjectModule,
+    TaskModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
