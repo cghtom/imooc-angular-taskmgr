@@ -1,22 +1,20 @@
-<form>
+<form [formGroup]="form" (ngSubmit)="onSubmit(form,$event)">
   <md-card>
       <md-card-header>
         <div md-card-avatar class="example-header-image"></div>
         <md-card-title>用户登录</md-card-title>
       </md-card-header>
-      <img md-card-image src="http://static.mukewang.com/img/5992578d000152bf05900120.jpg" alt="Photo of a Shiba Inu">
+      <img md-card-image src="{{quote.pic}}" alt="Photo of a Shiba Inu">
       <md-card-content>
         <md-input-container class="full-width">
-          <input mdInput type="text" placeholder="邮箱">
+          <input mdInput type="text" placeholder="邮箱" formControlName="email">
         </md-input-container>
         <md-input-container class="full-width">
-          <input mdInput type="password" placeholder="密码">
+          <input mdInput type="password" placeholder="密码" formControlName="password">
         </md-input-container>
-        <button md-raised-button type="button" color="accent">登录</button>
+        <button md-raised-button type="submit" color="accent" [disabled]="!form.valid">登录</button>
         <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-            bred for hunting.
+            {{quote.cn}}
           </p>
       </md-card-content>
       <md-card-actions>

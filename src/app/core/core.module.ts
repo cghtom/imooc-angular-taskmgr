@@ -1,5 +1,5 @@
 import { NgModule,SkipSelf,Optional } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ServicesModule } from '../services/services.module';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdIconRegistry } from '@angular/material';
@@ -13,14 +13,16 @@ import { AppRoutingModule } from '../app-routing.module';
 
 
 import 'hammerjs';
+import 'rxjs/add/operator/take';
+import '../utils/debug.util';
 
 @NgModule({
   imports: [
     SharedModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule,
     HttpModule,
+    ServicesModule.forRoot(),
   ],
   declarations: [
     HeaderComponent, 
@@ -32,6 +34,14 @@ import 'hammerjs';
     HeaderComponent, 
     FooterComponent, 
     SidebarComponent,  
+  ],
+  providers: [
+    {
+      provide: 'BASE_CONFIG',
+      useValue: {
+        uri: 'http://localhost:3000'
+      }
+    }
   ]
 })
 export class CoreModule { 
