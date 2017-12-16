@@ -29,5 +29,13 @@ export class RegisterComponent implements OnInit {
       identity: []
     });
   }
+  onSubmit({value,valid},ev:Event){
+    ev.preventDefault();
+    if(!valid){
+      return;
+    }
+    console.log(value);
+    
+  }
 
 }
